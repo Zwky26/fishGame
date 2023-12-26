@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://4bmk7yhdryf7"]
+
+[ext_resource type="PackedScene" uid="uid://bkg2i6ik7i5me" path="res://fish_test.tscn" id="1_qa7hq"]
+
+[sub_resource type="Environment" id="Environment_f0u32"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gobuw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_st015"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_56xyt"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_f0u32")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1000, 0, 0, 0, 1, 0, 0, 0, 1000, 0, 0, 0)
+mesh = SubResource("BoxMesh_gobuw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+physics_material_override = SubResource("PhysicsMaterial_st015")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_56xyt")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_qa7hq")]
+transform = Transform3D(0.999994, 0.00361282, 0, -0.00361282, 0.999994, 0, 0, 0, 1, 0, 84.0617, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 144.608, 0)
+light_energy = 20.0
+omni_range = 1082.01
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 100, 0, 0, 0, 100, -183.319, 20.8072, 0)
+mesh = SubResource("BoxMesh_gobuw")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+physics_material_override = SubResource("PhysicsMaterial_st015")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_56xyt")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj606xkln6koq"]
+
+[ext_resource type="PackedScene" uid="uid://djgodybcnl2xs" path="res://Models/fish.glb" id="1_f4phb"]
+
+[node name="fish" instance=ExtResource("1_f4phb")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/rotation = Quaternion(-0.193979, -0.321833, -0.470236, 0.798545)
+bones/1/rotation = Quaternion(-0.15042, 0.0717009, -0.207656, 0.963904)
+bones/2/rotation = Quaternion(-0.131019, 0.00524169, -0.239818, 0.961922)

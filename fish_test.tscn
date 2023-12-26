@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkg2i6ik7i5me"]
+
+[ext_resource type="Script" path="res://fish_test.gd" id="1_j6gnj"]
+[ext_resource type="PackedScene" uid="uid://dj606xkln6koq" path="res://scenes/fish.tscn" id="2_xk8lv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh1jt"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_j6gnj")
+
+[node name="fish" parent="." instance=ExtResource("2_xk8lv")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.55675, -4.83525)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.89404e-13, 3.49709e-07, 8, 7.9996, -0.0802841, 3.50932e-09, 0.0802841, 7.9996, -3.49691e-07, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_sh1jt")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(-0.999943, 0.0034903, -0.0100947, 0, 0.945103, 0.326773, 0.0106811, 0.326754, -0.945049, -1.46944, 4.65081, 0)
+spring_length = 50.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
