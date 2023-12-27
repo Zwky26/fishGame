@@ -16,7 +16,7 @@
 environment = SubResource("Environment_f0u32")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1000, 0, 0, 0, 1, 0, 0, 0, 1000, 0, 0, 0)
+transform = Transform3D(10000, 0, 0, 0, 10, 0, 0, 0, 10000, 0, 0, 0)
 mesh = SubResource("BoxMesh_gobuw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
